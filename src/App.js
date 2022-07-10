@@ -4,10 +4,21 @@ import './styles/styleTodoList.css'
 
 
 function App() {
+    const [todos,setTodos]=useState([
+        {id:1, title:'first todo',completed:false}
+    ])
+
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
         if(event.key==='Enter'){
-
+            setTodos([
+                ...todos,
+                {
+                    id:Date.now(),
+                    title: todoTitle,
+                    completed: false
+                }
+            ])
         }
     }
 
@@ -33,7 +44,7 @@ function App() {
              <div className={'Container'}>
              </div>
          </div>,
-      <Tasks></Tasks>
+      <Tasks name={todoTitle}/>
     </div>
   );
 }
