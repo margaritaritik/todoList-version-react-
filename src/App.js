@@ -7,7 +7,8 @@ import Todos from "./components/Todos";
 function App() {
     const [todos,setTodos]=useState([
         {id:1, title:'first todo',completed:false},
-        {id:2, title:'second todo',completed:false}
+        {id:2, title:'second todo',completed:false},
+        {id:3, title:'second todo',completed:false}
     ])
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
@@ -20,8 +21,22 @@ function App() {
                     completed: false
                 }
             ])
+            console.log(todos);
         }
     }
+    // const addTodo = event =>{
+    //     if(event.key==='Enter'){
+    //         setTodos([
+    //             ...todos,
+    //             {
+    //                 id:Date.now(),
+    //                 title: todoTitle,
+    //                 completed: false
+    //             }
+    //         ])
+    //         console.log(todos);
+    //     }
+    // }
 
   return (
     <div className="App">
@@ -29,12 +44,12 @@ function App() {
              <h1>Список дел</h1>
              <form className="title">
                  <input
-                     className="textforwrite"
-                     type="text" value={todoTitle}
-                     onChange={event => setTodoTitle(event.target.value)}
-                     onKeyPress={addTodo}
+    className="textforwrite"
+    type="text" value={todoTitle}
+    onChange={event => setTodoTitle(event.target.value)}
+    onKeyPress={addTodo}
 
-                 ></input>
+    />
                  <button className="btn1">сохранить</button>
              </form>
              <div className="listForAll">
