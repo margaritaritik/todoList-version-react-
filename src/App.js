@@ -24,25 +24,37 @@ function App() {
             console.log(todos);
         }
     }
-    // const addTodo = event =>{
-    //     if(event.key==='Enter'){
-    //         setTodos([
-    //             ...todos,
-    //             {
-    //                 id:Date.now(),
-    //                 title: todoTitle,
-    //                 completed: false
-    //             }
-    //         ])
-    //         console.log(todos);
-    //     }
-    // }
 
+    const ButtonClick = event =>{
+        if(event.key==='Enter'){
+            setTodos([
+                ...todos,
+                {
+                    id:Date.now(),
+                    title: todoTitle,
+                    completed: false
+                }
+            ])
+            console.log(todos);
+        }
+    }
+    const handleClick = () => {
+        console.log('this is:', this);
+        setTodos([
+            ...todos,
+            {
+                id:Date.now(),
+                title: todoTitle,
+                completed: false
+            }
+        ])
+        console.log(todos);
+    };
   return (
     <div className="App">
          <div>
              <h1>Список дел</h1>
-             <form className="title">
+             {/*<form className="title">*/}
                  <input
     className="textforwrite"
     type="text" value={todoTitle}
@@ -50,10 +62,10 @@ function App() {
     onKeyPress={addTodo}
 
     />
-                 <button className="btn1">сохранить</button>
-             </form>
+                 <button key="btn1" onClick={handleClick}>сохранить</button>
+             {/*</form>*/}
              <div className="listForAll">
-                 <button key="buttonOfMadeId" >сделанные</button>
+                 <button key="buttonOfMadeId" onClick={handleClick}>сделанные</button>
                  <button key="buttonAllId" >все</button>
                  <button key="buttonNotOfMadeId" >не сделанные</button>
              </div>
