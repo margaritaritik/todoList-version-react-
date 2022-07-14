@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Tasks from "./components/Tasks";
 import './styles/styleTodoList.css'
 import Todos from "./components/Todos";
+import {Spring, animated, useSpring} from 'react-spring'
 
 
 function App() {
@@ -21,35 +22,16 @@ function App() {
                     completed: false
                 }
             ])
-            console.log(todos);
         }
+    }
+    const Toggle=()=>{
+        const [isToggle,setToggle]=useState(false);
+        const fade=useSpring({
+
+        })
     }
 
-    const ButtonClick = event =>{
-        if(event.key==='Enter'){
-            setTodos([
-                ...todos,
-                {
-                    id:Date.now(),
-                    title: todoTitle,
-                    completed: false
-                }
-            ])
-            console.log(todos);
-        }
-    }
-    const handleClick = () => {
-        console.log('this is:', this);
-        setTodos([
-            ...todos,
-            {
-                id:Date.now(),
-                title: todoTitle,
-                completed: false
-            }
-        ])
-        console.log(todos);
-    };
+
   return (
     <div className="App">
          <div>
@@ -62,10 +44,10 @@ function App() {
     onKeyPress={addTodo}
 
     />
-                 <button key="btn1" onClick={handleClick}>сохранить</button>
+                 <button key="btn1" onClick={addTodo}>сохранить</button>
              {/*</form>*/}
              <div className="listForAll">
-                 <button key="buttonOfMadeId" onClick={handleClick}>сделанные</button>
+                 <button key="buttonOfMadeId" onClick={addTodo}>сделанные</button>
                  <button key="buttonAllId" >все</button>
                  <button key="buttonNotOfMadeId" >не сделанные</button>
              </div>

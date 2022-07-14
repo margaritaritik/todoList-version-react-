@@ -5,7 +5,7 @@ const Todos =function (todos) {
      let listTodos =todos.todos;
      let list=listTodos.map(todo => (<Tasks name={todo.title} id={todo.id} />));
     return (
-    <div>
+    <div className="containerItem">
         {list}
     </div>
     );
