@@ -7,6 +7,13 @@
    border-radius: 20px;
    margin: 20px;
 }
+
+.divTodo:hover{
+   margin: 10px;
+   background: #032cfc;
+   border-color: green;
+}
+
 .textTodo{
    word-break:break-all;
 }
