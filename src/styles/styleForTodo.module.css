@@ -2,9 +2,10 @@
 .divTodo{
    padding: 20px;
    background: red;
-   border: 1rem solid;
+   border: 3rem solid;
    border-width: 1px;
-
+   border-radius: 20px;
+   margin: 20px;
 }
 .textTodo{
    word-break:break-all;
