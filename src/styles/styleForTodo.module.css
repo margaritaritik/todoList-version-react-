@@ -1,0 +1,11 @@
+
+.divTodo{
+   padding: 20px;
+   background: red;
+   border: 1rem solid;
+   border-width: 1px;
+
+}
+.textTodo{
+   word-break:break-all;
+}

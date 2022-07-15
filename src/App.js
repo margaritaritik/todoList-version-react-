@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Tasks from "./components/Tasks";
 import './styles/styleTodoList.css'
+import styles from './styles/styleForTodo.module.css'
 import Todos from "./components/Todos";
 import {Spring, animated, useSpring} from 'react-spring'
 
@@ -38,12 +39,12 @@ function App() {
              <h1>Список дел</h1>
              {/*<form className="title">*/}
                  <input
-    className="textforwrite"
-    type="text" value={todoTitle}
-    onChange={event => setTodoTitle(event.target.value)}
-    onKeyPress={addTodo}
+                    className="textforwrite"
+                    type="text" value={todoTitle}
+                    onChange={event => setTodoTitle(event.target.value)}
+                    onKeyPress={addTodo}
 
-    />
+                 />
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              {/*</form>*/}
              <div className="listForAll">
@@ -53,8 +54,10 @@ function App() {
              </div>
              <div className={'Container'}>
              </div>
-         </div>,
-        <Todos todos={todos}/>
+         </div>
+        <div >
+            <Todos todos={todos}/>
+        </div>
     </div>
   );
 }

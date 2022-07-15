@@ -52,6 +52,5 @@ span{
 }
 
 .containerItem{
-    border: 1rem solid;
-    border-width: 1px;
+    width: 400px;
 }
