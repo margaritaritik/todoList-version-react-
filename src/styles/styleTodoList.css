@@ -6,6 +6,7 @@
 #root{
     display: flex;
     justify-content: center;
+    background-color: darkslateblue;
 }
 
 .containerItem{
@@ -18,7 +19,7 @@ h1{
 }
 
 .title{
-
+    background-color: darkslateblue;
 }
 
 span{
