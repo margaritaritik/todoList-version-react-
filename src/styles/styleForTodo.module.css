@@ -6,12 +6,17 @@
    border-width: 1px;
    border-radius: 20px;
    margin: 20px;
+   transition: background-color .15s ease-in-out;
+   transition-property: all;
+   transition-duration: 0.5s;
 }
 
 .divTodo:hover{
    margin: 10px;
    background: #032cfc;
    border-color: green;
+   transition-property: all;
+   transition-duration: 0.5s;
 }
 
 .textTodo{
