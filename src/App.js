@@ -11,6 +11,9 @@ function App() {
         {id:1, title:'first todo',completed:false},
         {id:2, title:'second todo',completed:false},
         {id:3, title:'second todo',completed:false}
+    ]);
+    const [todosCompleted,setTodosCompleted]=useState([
+        {id:1, title:'first todo',completed:false},
     ])
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
@@ -25,6 +28,18 @@ function App() {
             ])
         }
     }
+
+    const madeTodos = event =>{
+
+    }
+    const allTodos = event =>{
+
+    }
+    const notMadeTodos = event =>{
+
+    }
+
+
     const Toggle=()=>{
         const [isToggle,setToggle]=useState(false);
         const fade=useSpring({
@@ -37,25 +52,20 @@ function App() {
     <div className="App">
          <div>
              <h1>Список дел</h1>
-             {/*<form className="title">*/}
                  <input
                     className="textforwrite"
                     type="text" value={todoTitle}
                     onChange={event => setTodoTitle(event.target.value)}
                     onKeyPress={addTodo}
-
                  />
                  <button key="btn1" onClick={addTodo}>сохранить</button>
-             {/*</form>*/}
              <div className="listForAll">
-                 <button key="buttonOfMadeId" onClick={addTodo}>сделанные</button>
-                 <button key="buttonAllId" >все</button>
-                 <button key="buttonNotOfMadeId" >не сделанные</button>
-             </div>
-             <div className={'Container'}>
+                 <button key="buttonOfMadeId" onClick={madeTodos}>сделанные</button>
+                 <button key="buttonAllId" onClick={allTodos} >все</button>
+                 <button key="buttonNotOfMadeId" onClick={notMadeTodos} >не сделанные</button>
              </div>
          </div>
-        <div >
+        <div className='Container'>
             <Todos todos={todos}/>
         </div>
     </div>
