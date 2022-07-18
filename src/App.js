@@ -26,6 +26,7 @@ function App() {
                     completed: false
                 }
             ])
+            setTodoTitle('');
         }
     }
 
