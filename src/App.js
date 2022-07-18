@@ -31,7 +31,7 @@ function App() {
     }
 
     const madeTodos = event =>{
-
+        console.log(todos)
     }
     const allTodos = event =>{
 
@@ -67,7 +67,7 @@ function App() {
              </div>
          </div>
         <div className='Container'>
-            <Todos todos={todos}/>
+            <Todos todos={todos} count={1} />
         </div>
     </div>
   );

@@ -3,17 +3,26 @@ import styles from '../styles/styleForTodo.module.css'
 // import "./styles/styleForTodo.module.css"
 
 const Tasks = function (props) {
-    const [checked,setChecked]=useState(props.completed);
+    let {name,id,completed} =props;
+     // let list=listTodos.map(todo => ({}));
+     let todos=props;
+    const [checked,setChecked]=useState(todos.completed);
+    // listTodos.id('sdfhk');
+
     // if(checked){
     //     props.completed=true;
     // }
     // setChecked(){}
-
+    const ChangeCompleted = ()=>{
+        setChecked(!checked);
+        completed=!checked;
+        console.log(`${name} ${id} ${completed}`);
+    }
     return (
         <div className={styles.divTodo}>
-            <label key={props.id.toString()} className={styles.textTodo} >
-                <input key={'inputting'} type={"checkbox"} checked={checked} onChange={()=>setChecked(!checked)} />
-                <span>{props.name}</span>
+            <label key={todos.id.toString()} className={styles.textTodo} >
+                <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
+                <span>{name}</span>
             </label>
         </div>
     );
