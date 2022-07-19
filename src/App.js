@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="App">
          <div>
-             <header>
+             <header className="headerInput">
                  <h1>Список дел</h1>
                  <input
                      className="textforwrite"
