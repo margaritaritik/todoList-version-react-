@@ -4,6 +4,9 @@ import './styles/styleTodoList.css'
 import styles from './styles/styleForTodo.module.css'
 import Todos from "./components/Todos";
 import {Spring, animated, useSpring} from 'react-spring'
+import ButtonNotOfMade from "./buttons/ButtonNotOfMade";
+import ButtonAll from "./buttons/ButtonAll";
+import ButtonOfMade from "./buttons/ButtonOfMade";
 
 
 function App() {
@@ -12,9 +15,7 @@ function App() {
         {id:2, title:'second todo',completed:false},
         {id:3, title:'second todo',completed:false}
     ]);
-    const [todosCompleted,setTodosCompleted]=useState([
-        {id:1, title:'first todo',completed:false},
-    ])
+
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
         if(event.key==='Enter'){
@@ -30,15 +31,6 @@ function App() {
         }
     }
 
-    const madeTodos = event =>{
-        console.log(todos)
-    }
-    const allTodos = event =>{
-
-    }
-    const notMadeTodos = event =>{
-
-    }
 
 
     const Toggle=()=>{
@@ -61,13 +53,13 @@ function App() {
                  />
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              <div className="listForAll">
-                 <button key="buttonOfMadeId" onClick={madeTodos}>сделанные</button>
-                 <button key="buttonAllId" onClick={allTodos} >все</button>
-                 <button key="buttonNotOfMadeId" onClick={notMadeTodos} >не сделанные</button>
+                 <ButtonNotOfMade/>
+                 <ButtonAll/>
+                 <ButtonOfMade/>
              </div>
          </div>
         <div className='Container'>
-            <Todos todos={todos} count={1} />
+            <Todos todos={todos} />
         </div>
     </div>
   );
