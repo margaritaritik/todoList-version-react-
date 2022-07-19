@@ -2,14 +2,11 @@ import React from 'react';
 
 const ButtonNotOfMade = () => {
     const madeTodos = event =>{
-        console.log(todos)
+        console.log("button of made click")
     }
 
-
     return (
-        <div>
             <button key="buttonOfMadeId" onClick={madeTodos}>сделанные</button>
-        </div>
     );
 };
 

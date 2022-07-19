@@ -44,14 +44,16 @@ function App() {
   return (
     <div className="App">
          <div>
-             <h1>Список дел</h1>
+             <header>
+                 <h1>Список дел</h1>
                  <input
-                    className="textforwrite"
-                    type="text" value={todoTitle}
-                    onChange={event => setTodoTitle(event.target.value)}
-                    onKeyPress={addTodo}
+                     className="textforwrite"
+                     type="text" value={todoTitle}
+                     onChange={event => setTodoTitle(event.target.value)}
+                     onKeyPress={addTodo}
                  />
                  <button key="btn1" onClick={addTodo}>сохранить</button>
+             </header>
              <div className="listForAll">
                  <ButtonNotOfMade/>
                  <ButtonAll/>

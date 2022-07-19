@@ -33,19 +33,10 @@ span{
 
 .listForAll{
     width: 300px;
+    display: flex;
+    justify-content: center;
 }
 
-#buttonOfMadeId{
-    width: 120px;
-}
-
-#buttonAllId{
-    width: 50px;
-}
-
-#buttonNotOfMadeId{
-    width: 120px;
-}
 
 .listForAll{
     padding: 20px 0 0 0;
@@ -53,5 +44,5 @@ span{
 }
 
 .containerItem{
-    width: 400px;
+
 }

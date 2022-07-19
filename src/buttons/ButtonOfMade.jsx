@@ -2,12 +2,10 @@ import React from 'react';
 
 const ButtonOfMade = () => {
     const notMadeTodos = event =>{
-
+        console.log("button not made click");
     }
     return (
-        <div>
             <button key="buttonNotOfMadeId" onClick={notMadeTodos} >не сделанные</button>
-        </div>
     );
 };
 
