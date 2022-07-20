@@ -9,13 +9,14 @@ import ButtonAll from "./buttons/ButtonAll";
 import ButtonOfMade from "./buttons/ButtonOfMade";
 
 
-function App() {
+function App(props) {
     const [todos,setTodos]=useState([
         {id:1, title:'first todo',completed:false},
         {id:2, title:'second todo',completed:false},
         {id:3, title:'second todo',completed:false}
     ]);
 
+    console.log(props);
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
         if(event.key==='Enter'){
@@ -55,9 +56,9 @@ function App() {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <ButtonNotOfMade/>
+                 <ButtonNotOfMade  />
                  <ButtonAll/>
-                 <ButtonOfMade/>
+                 <ButtonOfMade todos={todos}/>
              </div>
          </div>
         <div className='Container'>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ButtonOfMade = () => {
+const ButtonOfMade = (props) => {
     const notMadeTodos = event =>{
-        console.log("button not made click");
+        console.log(props.todos);
     }
     return (
             <button key="buttonNotOfMadeId" onClick={notMadeTodos} >не сделанные</button>

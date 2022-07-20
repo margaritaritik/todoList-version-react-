@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from '../styles/styleForTodo.module.css'
+import styles from '../styles/styleForTodo.module.css';
 
 const Tasks = function (props) {
 
@@ -9,6 +9,7 @@ const Tasks = function (props) {
     const ChangeCompleted = ()=>{
         setChecked(!checked);
         completed=!checked;
+
     }
 
     return (
