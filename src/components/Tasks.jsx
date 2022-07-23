@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import styles from '../styles/styleForTodo.module.css';
 
-const Tasks = function (props) {
-
-    let {name,id,completed} =props;
+const Tasks = function ({name,id,completed}) {
     const [checked,setChecked]=useState(completed);
 
     const ChangeCompleted = ()=>{
         setChecked(!checked);
         completed=!checked;
-
     }
 
     return (
