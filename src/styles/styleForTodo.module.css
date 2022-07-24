@@ -1,6 +1,6 @@
 
 .divTodo{
-   width: 300px;
+   width: 500px;
    padding: 20px;
    background: red;
    border: 3rem solid;
@@ -13,6 +13,8 @@
 }
 
 .divTodo:hover{
+   position: absolute;
+   /*transform: scale(0);*/
    margin: 10px;
    background: #032cfc;
    border-color: green;

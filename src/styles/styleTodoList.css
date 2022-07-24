@@ -17,6 +17,7 @@
 
 .containerItem{
     padding: 20px;
+    position: absolute;
 }
 
 h1{

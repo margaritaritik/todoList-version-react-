@@ -44,8 +44,7 @@ function App(props) {
 
   return (
     <div className="App">
-         <div>
-             <header className="headerInput">
+             <form className="headerInput">
                  <h1>Список дел</h1>
                  <input
                      className="textforwrite"
@@ -54,13 +53,12 @@ function App(props) {
                      onKeyPress={addTodo}
                  />
                  <button key="btn1" onClick={addTodo}>сохранить</button>
-             </header>
+             </form>
              <div className="listForAll">
                  <ButtonNotOfMade  />
                  <ButtonAll/>
                  <ButtonOfMade todos={todos}/>
              </div>
-         </div>
         <div className='Container'>
             <Todos todos={todos} />
         </div>
