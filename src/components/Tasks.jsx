@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 import styles from '../styles/styleForTodo.module.css';
 
-const Tasks = function ({name,id,completed}) {
+const Tasks = function ({name,id,completed,checkedCompleted}) {
     const [checked,setChecked]=useState(completed);
 
     const ChangeCompleted = ()=>{
         setChecked(!checked);
         completed=!checked;
+        checkedCompleted(id,name,completed);
     }
+
+
 
     return (
         <div className={styles.divTodo}>

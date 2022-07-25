@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import Tasks from "./components/Tasks";
 import './styles/styleTodoList.css'
 import styles from './styles/styleForTodo.module.css'
@@ -33,18 +33,19 @@ function App(props) {
     }
 
 
+     const createTodo = (todo)=>{
+          let copy=Object.assign([],todos);
 
-    const Toggle=()=>{
-        const [isToggle,setToggle]=useState(false);
-        const fade=useSpring({
+          console.log(copy);
+          console.log(todo);
+     }
 
-        })
-    }
+    // }
 
 
   return (
     <div className="App">
-             <form className="headerInput">
+             <header className="headerInput">
                  <h1>Список дел</h1>
                  <input
                      className="textforwrite"
@@ -53,14 +54,14 @@ function App(props) {
                      onKeyPress={addTodo}
                  />
                  <button key="btn1" onClick={addTodo}>сохранить</button>
-             </form>
+             </header>
              <div className="listForAll">
                  <ButtonNotOfMade  />
                  <ButtonAll/>
                  <ButtonOfMade todos={todos}/>
              </div>
         <div className='Container'>
-            <Todos todos={todos} />
+            <Todos todos={todos} create={createTodo} />
         </div>
     </div>
   );

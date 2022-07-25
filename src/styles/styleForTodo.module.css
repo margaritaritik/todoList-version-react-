@@ -13,7 +13,8 @@
 }
 
 .divTodo:hover{
-   position: absolute;
+   object-position: center;
+   /*position: fixed;*/
    /*transform: scale(0);*/
    margin: 10px;
    background: #032cfc;
