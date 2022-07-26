@@ -2,7 +2,8 @@ import React from 'react';
 
 const ButtonNotOfMade = ({todos}) => {
     const madeTodos = event =>{
-        const ableToDrink = todos.filter( completed => completed ===true );
+        const ableToDrink = todos.filter( completed => completed.completed ===true );
+
         console.log(ableToDrink)
     }
 

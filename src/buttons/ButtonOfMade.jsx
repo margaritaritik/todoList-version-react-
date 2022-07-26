@@ -1,8 +1,9 @@
 import React from 'react';
 
-const ButtonOfMade = (props) => {
+const ButtonOfMade = ({todos}) => {
     const notMadeTodos = event =>{
-        console.log(props.todos);
+        const ableToDrink = todos.filter( completed => completed.completed ===false );
+
     }
     return (
             <button key="buttonNotOfMadeId" onClick={notMadeTodos} >не сделанные</button>
