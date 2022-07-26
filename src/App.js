@@ -41,7 +41,13 @@ function App(props) {
      }
 
     // }
+    const check=(id,title,completed)=>{
+        const todo={id:id,title:title,completed:completed};
+       const myArray=todos.find(x => x.id === id).id;
+        console.log(`${id} ${title} ${completed}     ${myArray}`);
+    }
 
+    let list=todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
 
   return (
     <div className="App">
@@ -56,13 +62,13 @@ function App(props) {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <ButtonNotOfMade  />
-                 <ButtonAll/>
+                 <ButtonNotOfMade  todos={todos}/>
+                 <ButtonAll todos={todos}/>
                  <ButtonOfMade todos={todos}/>
              </div>
-        <div className='Container'>
-            <Todos todos={todos} create={createTodo} />
-        </div>
+            <div className="containerItem">
+                {list}
+            </div>
     </div>
   );
 }

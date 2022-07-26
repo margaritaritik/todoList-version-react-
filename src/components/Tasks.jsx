@@ -11,7 +11,6 @@ const Tasks = function ({name,id,completed,checkedCompleted}) {
     }
 
 
-
     return (
         <div className={styles.divTodo}>
             <label key={id.toString()} className={styles.textTodo}>
