@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import Tasks from "./components/Tasks";
 import './styles/styleTodoList.css'
 import styles from './styles/styleForTodo.module.css'
-import Todos from "./components/Todos";
+
 import {Spring, animated, useSpring} from 'react-spring'
 import ButtonNotOfMade from "./buttons/ButtonNotOfMade";
 import ButtonAll from "./buttons/ButtonAll";
@@ -42,9 +42,17 @@ function App(props) {
 
     // }
     const check=(id,title,completed)=>{
-        const todo={id:id,title:title,completed:completed};
+       const todo={id:id,title:title,completed:completed};
        const myArray=todos.find(x => x.id === id).id;
-        console.log(`${id} ${title} ${completed}     ${myArray}`);
+        setTodos(todos.map(obj => {
+            if (obj.id == id) {
+                return {...obj, ['completed']:!(obj.completed) };
+            } else {
+                return obj;
+            }
+        }));
+       // console.log(`${id} ${title} ${completed}     ${todos}`);
+       // console.log(todos);
     }
 
     let list=todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
