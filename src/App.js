@@ -40,6 +40,11 @@ function App(props) {
           console.log(todo);
      }
 
+     const removeTodos=()=>{
+        let todosCopy=todos;
+        setTodos(todos.filter(p=>todos.completed===true))
+     }
+
     // }
     const check=(id,title,completed)=>{
        const todo={id:id,title:title,completed:completed};
@@ -70,9 +75,9 @@ function App(props) {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <ButtonNotOfMade  todos={todos}/>
+                 <ButtonNotOfMade todos={todos}/>
                  <ButtonAll todos={todos}/>
-                 <ButtonOfMade todos={todos}/>
+                 <ButtonOfMade remove={removeTodos}  todos={todos}/>
              </div>
             <div className="containerItem">
                 {list}
