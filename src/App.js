@@ -42,7 +42,11 @@ function App(props) {
 
      const removeTodos=()=>{
         let todosCopy=todos;
-        setTodos(todos.filter(p=>todos.completed===true))
+        setTodos(todos.filter( completed => completed.completed ===true));
+        let a=todos.filter(completed => completed.completed ===true);
+
+          console.log(a);
+       //  console.log(todos);
      }
 
     // }
