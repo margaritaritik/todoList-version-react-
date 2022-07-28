@@ -1,8 +1,9 @@
 import React from 'react';
 
-const ButtonAll = () => {
+const ButtonAll = ({todos,remove}) => {
     const allTodos = event =>{
-        console.log('button all click');
+        // const todosOfMade = todos.filter( completed => completed.completed ===true);
+        remove(todos);
     }
 
     return (

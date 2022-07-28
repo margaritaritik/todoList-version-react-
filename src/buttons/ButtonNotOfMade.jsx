@@ -1,14 +1,13 @@
 import React from 'react';
 
-const ButtonNotOfMade = ({todos}) => {
-    const madeTodos = event =>{
-        const ableToDrink = todos.filter( completed => completed.completed ===false );
-
-        //console.log(ableToDrink)
+const ButtonNotOfMade = ({todos,remove}) => {
+    const notMadeTodos = event =>{
+        const todosOfMade = todos.filter( completed => completed.completed ===false);
+        remove(todosOfMade);
     }
 
     return (
-            <button key="buttonNotOfMadeId" onClick={madeTodos}>не сделанные</button>
+            <button key="buttonNotOfMadeId" onClick={notMadeTodos}>не сделанные</button>
     );
 };
 
