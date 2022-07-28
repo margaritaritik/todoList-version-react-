@@ -16,7 +16,7 @@ function App(props) {
         {id:3, title:'second todo',completed:false}
     ]);
 
-    console.log(props);
+   // console.log(props);
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
         if(event.key==='Enter'){
@@ -41,16 +41,15 @@ function App(props) {
      }
     let todosCopy=todos;
      const removeTodos=(prop)=>{
+         if(prop===false){
+             setTodos([...todos].filter( completed => completed.completed ===false));
+             console.log(todos);
+         }
+         else if(prop===true){
+             setTodos([...todosCopy].filter( completed => completed.completed ===true));
+             console.log(todos);
 
-        setTodos(prop);
-
-
-        //setTodos(todosCopy.filter( completed => completed.completed ===true));
-
-        let a=todos.filter(completed => completed.completed ===true);
-
-          console.log(prop);
-       //  console.log(todos);
+         }
      }
 
     // }
@@ -83,8 +82,8 @@ function App(props) {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <ButtonNotOfMade todos={todosCopy}/>
-                 <ButtonAll todos={todosCopy}/>
+                 <ButtonNotOfMade remove={removeTodos} todos={todosCopy}/>
+                 <ButtonAll remove={removeTodos} todos={todosCopy}/>
                  <ButtonOfMade remove={removeTodos}  todos={todosCopy}/>
              </div>
             <div className="containerItem">

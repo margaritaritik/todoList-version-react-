@@ -3,7 +3,7 @@ import React from 'react';
 const ButtonAll = ({todos,remove}) => {
     const allTodos = event =>{
         // const todosOfMade = todos.filter( completed => completed.completed ===true);
-        remove(todos);
+
     }
 
     return (
