@@ -42,14 +42,19 @@ function App(props) {
     let todosCopy=todos;
      const removeTodos=(prop)=>{
          if(prop===false){
-             setTodos([...todos].filter( completed => completed.completed ===false));
-             console.log(todos);
+             return setTodos([...todos].filter( completed => completed.completed ===false));
+             // let a=[...todos].filter( completed => completed.completed ===false);
+             // console.log(a);
          }
          else if(prop===true){
-             setTodos([...todosCopy].filter( completed => completed.completed ===true));
-             console.log(todos);
-
+             return setTodos([...todos].filter( completed => completed.completed === true));
+             // setTodos(todos);
+             // console.log(todos);
+             // setTodos([...todos].filter( completed => completed.completed ===true));
+             // console.log(todos);
          }
+         return setTodos([...todos]);
+
      }
 
     // }
