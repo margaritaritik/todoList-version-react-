@@ -80,7 +80,18 @@ function App(props) {
     }
 
     let list=todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
+    const ButtonOfMadeClick = event =>{
+        console.log("ljsahck");
+        setTodos([...todos].filter( completed => completed.completed === true));
+        // const todosOfMade = todos.filter( completed => completed.completed ===true);
 
+    }
+    const ButtonNotOfMadeClick = event =>{
+        console.log("ljsahck2");
+        setTodos([...todos].filter( completed => completed.completed === false));
+        // const todosOfMade = todos.filter( completed => completed.completed ===true);
+
+    }
   return (
     <div className="App">
              <header className="headerInput">
@@ -94,9 +105,9 @@ function App(props) {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <MyButton key="1b" name='ВСЕ'/>
-                 <MyButton key="2b"  name='СДЕЛАННЫЕ'/>
-                 <MyButton key="3b"  name='НЕ СДЕЛАННЫЕ'/>
+                 <MyButton key="1b" onClick={ButtonOfMadeClick} >Сделанные</MyButton>
+                 <MyButton key="2b"  onClick={ButtonNotOfMadeClick}>Все</MyButton>
+                 <MyButton key="3b"  >Не сделанные</MyButton>
              </div>
             <div className="containerItem">
                 {list}

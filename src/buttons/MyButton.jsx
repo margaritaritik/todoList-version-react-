@@ -1,13 +1,13 @@
 import React from 'react';
 
-const MyButton = (props) => {
+const MyButton = ({children,...props}) => {
     const buttonClick = event =>{
         // const todosOfMade = todos.filter( completed => completed.completed ===true);
 
     }
 
     return (
-        <button key={props.key} onClick={buttonClick} > {props.name}</button>
+        <button {...props}  > {children}</button>
     );
 };
 
