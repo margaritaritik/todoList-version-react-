@@ -7,6 +7,7 @@ import {Spring, animated, useSpring} from 'react-spring'
 import ButtonNotOfMade from "./buttons/ButtonNotOfMade";
 import ButtonAll from "./buttons/ButtonAll";
 import ButtonOfMade from "./buttons/ButtonOfMade";
+import MyButton from "./buttons/MyButton";
 
 
 function App(props) {
@@ -93,9 +94,9 @@ function App(props) {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <ButtonNotOfMade remove={removeTodos} todos={todosCopy}/>
-                 <ButtonAll remove={removeTodos} todos={todosCopy}/>
-                 <ButtonOfMade remove={removeTodos}  todos={todosCopy}/>
+                 <MyButton key="1b" name='ВСЕ'/>
+                 <MyButton key="2b"  name='СДЕЛАННЫЕ'/>
+                 <MyButton key="3b"  name='НЕ СДЕЛАННЫЕ'/>
              </div>
             <div className="containerItem">
                 {list}
