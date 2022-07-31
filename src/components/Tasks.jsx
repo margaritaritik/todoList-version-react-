@@ -13,7 +13,7 @@ const Tasks = function ({name,id,completed,checkedCompleted}) {
 
     return (
         <div className={styles.divTodo}>
-            <label key={id.toString()} className={styles.textTodo}>
+            <label key={id} className={styles.textTodo}>
                 <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
                 <span>{name}</span>
             </label>

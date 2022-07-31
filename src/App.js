@@ -79,16 +79,35 @@ function App(props) {
        // console.log(todos);
     }
 
-    let list=todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
-    const ButtonOfMadeClick = event =>{
-        console.log("ljsahck");
-        setTodos([...todos].filter( completed => completed.completed === true));
+    const todoList=(prop)=>{
+         if(prop===true){
+            return [...todos].filter( completed => completed.completed === true);
+
+         }
+         if(prop===false){
+             return [...todos].filter( completed => completed.completed === false);
+         }
+         console.log("hjvx");
+         return todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
+
+    }
+
+    // let list=todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
+    //  const cop=todos;
+     const ButtonOfMadeClick = event =>{
+         console.log("true");
+         todoList(true);
+
+        // setTodos([...todos].filter( completed => completed.completed === true));
+        //
         // const todosOfMade = todos.filter( completed => completed.completed ===true);
 
     }
     const ButtonNotOfMadeClick = event =>{
-        console.log("ljsahck2");
-        setTodos([...todos].filter( completed => completed.completed === false));
+        console.log("false");
+        todoList(false);
+
+        // setTodos([...todos].filter( completed => completed.completed === false));
         // const todosOfMade = todos.filter( completed => completed.completed ===true);
 
     }
@@ -110,7 +129,7 @@ function App(props) {
                  <MyButton key="3b"  >Не сделанные</MyButton>
              </div>
             <div className="containerItem">
-                {list}
+                {todoList()}
             </div>
     </div>
   );
