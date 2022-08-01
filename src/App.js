@@ -2,12 +2,9 @@ import React, {useMemo, useRef, useState} from "react";
 import Tasks from "./components/Tasks";
 import './styles/styleTodoList.css'
 import styles from './styles/styleForTodo.module.css'
-
 import {Spring, animated, useSpring} from 'react-spring'
-import ButtonNotOfMade from "./buttons/ButtonNotOfMade";
-import ButtonAll from "./buttons/ButtonAll";
-import ButtonOfMade from "./buttons/ButtonOfMade";
-import MyButton from "./buttons/MyButton";
+
+import MyButton from "./components/button/MyButton";
 
 
 function App(props) {

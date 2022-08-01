@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from '../styles/styleForTodo.module.css';
-import MyButton from "../buttons/MyButton";
+import MyButton from "./button/MyButton";
 
 const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
     const [checked,setChecked]=useState(completed);
