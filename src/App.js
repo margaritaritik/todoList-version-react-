@@ -14,7 +14,7 @@ function App(props) {
     const [todos,setTodos]=useState([
         {id:1, title:'first todo',completed:false},
         {id:2, title:'second todo',completed:false},
-        {id:3, title:'second todo',completed:false}
+        {id:3, title:'second todo2',completed:false}
     ]);
     const [todosTest,setTodosTest]=useState(todos);
 
@@ -24,6 +24,14 @@ function App(props) {
         if(event.key==='Enter'){
             setTodos([
                 ...todos,
+                {
+                    id:Date.now(),
+                    title: todoTitle,
+                    completed: false
+                }
+            ])
+            setTodosTest([
+                ...todosTest,
                 {
                     id:Date.now(),
                     title: todoTitle,
