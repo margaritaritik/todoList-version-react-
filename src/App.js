@@ -57,6 +57,10 @@ function App(props) {
     const ButtonNotOfMadeClick = event =>{
          setTodosTest([...todos].filter( completed => completed.completed === false));
     }
+
+    const ButtonAllClick = event =>{
+        setTodosTest([...todos]);
+    }
   return (
     <div className="App">
              <header className="headerInput">
@@ -71,7 +75,7 @@ function App(props) {
              </header>
              <div className="listForAll">
                  <MyButton key="1b" onClick={ButtonOfMadeClick} >Сделанные</MyButton>
-                 <MyButton key="2b"  >Все</MyButton>
+                 <MyButton key="2b" onClick={ButtonAllClick} >Все</MyButton>
                  <MyButton key="3b"  onClick={ButtonNotOfMadeClick}>Не сделанные</MyButton>
              </div>
             <div className="containerItem">
