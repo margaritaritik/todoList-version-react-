@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useMemo, useRef, useState} from "react";
 import Tasks from "./components/Tasks";
 import './styles/styleTodoList.css'
 import styles from './styles/styleForTodo.module.css'
@@ -16,6 +16,7 @@ function App(props) {
         {id:2, title:'second todo',completed:false},
         {id:3, title:'second todo',completed:false}
     ]);
+    const [todosTest,setTodosTest]=useState(todos);
 
    // console.log(props);
     const [todoTitle,setTodoTitle]=useState('');
@@ -34,37 +35,6 @@ function App(props) {
     }
 
 
-     const createTodo = (todo)=>{
-          let copy=Object.assign([],todos);
-
-          console.log(copy);
-          console.log(todo);
-     }
-    let todosCopy=todos;
-     const removeTodos=(prop)=>{
-         if(prop===false){
-             todosCopy=todos;
-             console.log(todosCopy);
-             return setTodos([...todos].filter( completed => completed.completed ===false));
-
-
-             // let a=[...todos].filter( completed => completed.completed ===false);
-
-         }
-         else if(prop===true){
-             console.log(todos);
-             setTodos(todos);
-             return setTodos([...todos].filter( completed => completed.completed === true));
-             // setTodos(todos);
-             // console.log(todos);
-             // setTodos([...todos].filter( completed => completed.completed ===true));
-             // console.log(todos);
-         }
-         return setTodos([...todos]);
-
-     }
-
-    // }
     const check=(id,title,completed)=>{
        const todo={id:id,title:title,completed:completed};
        const myArray=todos.find(x => x.id === id).id;
@@ -75,41 +45,17 @@ function App(props) {
                 return obj;
             }
         }));
-       // console.log(`${id} ${title} ${completed}     ${todos}`);
-       // console.log(todos);
     }
 
-    const todoList=(prop)=>{
-         if(prop===true){
-            return [...todos].filter( completed => completed.completed === true);
 
-         }
-         if(prop===false){
-             return [...todos].filter( completed => completed.completed === false);
-         }
-         console.log("hjvx");
-         return todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
+     let list=todosTest.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
 
-    }
-
-    // let list=todos.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
-    //  const cop=todos;
      const ButtonOfMadeClick = event =>{
-         console.log("true");
-         todoList(true);
-
-        // setTodos([...todos].filter( completed => completed.completed === true));
-        //
-        // const todosOfMade = todos.filter( completed => completed.completed ===true);
-
+         setTodosTest([...todos].filter( completed => completed.completed === true));
     }
+
     const ButtonNotOfMadeClick = event =>{
-        console.log("false");
-        todoList(false);
-
-        // setTodos([...todos].filter( completed => completed.completed === false));
-        // const todosOfMade = todos.filter( completed => completed.completed ===true);
-
+         setTodosTest([...todos].filter( completed => completed.completed === false));
     }
   return (
     <div className="App">
@@ -125,11 +71,11 @@ function App(props) {
              </header>
              <div className="listForAll">
                  <MyButton key="1b" onClick={ButtonOfMadeClick} >Сделанные</MyButton>
-                 <MyButton key="2b"  onClick={ButtonNotOfMadeClick}>Все</MyButton>
-                 <MyButton key="3b"  >Не сделанные</MyButton>
+                 <MyButton key="2b"  >Все</MyButton>
+                 <MyButton key="3b"  onClick={ButtonNotOfMadeClick}>Не сделанные</MyButton>
              </div>
             <div className="containerItem">
-                {todoList()}
+                {list}
             </div>
     </div>
   );
