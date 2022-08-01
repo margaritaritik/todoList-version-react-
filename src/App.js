@@ -54,9 +54,13 @@ function App(props) {
             }
         }));
     }
+    const deleteTodo=(id)=>{
+        setTodosTest(todosTest.filter(note => note.id !== id));
+        setTodos(todos.filter(note => note.id !== id));
+    }
 
 
-     let list=todosTest.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}/>));
+     let list=todosTest.map(todo => (<Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check} deleteTodo={deleteTodo} />));
 
      const ButtonOfMadeClick = event =>{
          setTodosTest([...todos].filter( completed => completed.completed === true));
