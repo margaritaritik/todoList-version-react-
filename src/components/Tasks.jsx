@@ -20,7 +20,7 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
                 <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
                 <span >{name}</span>
             </label>
-            <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >УДАЛИТЬ</ButtonDelete>
+            <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >X</ButtonDelete>
         </div>
     );
 };
