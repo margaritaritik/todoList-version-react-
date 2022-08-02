@@ -4,7 +4,7 @@ import './styles/styleTodoList.css'
 import styles from './styles/styleForTodo.module.css'
 import {Spring, animated, useSpring} from 'react-spring'
 
-import MyButton from "./components/button/MyButton";
+import ButtonsMenu from "./components/button/ButtonsMenu";
 
 
 function App(props) {
@@ -83,9 +83,9 @@ function App(props) {
                  <button key="btn1" onClick={addTodo}>сохранить</button>
              </header>
              <div className="listForAll">
-                 <MyButton key="1b" onClick={ButtonOfMadeClick} >Сделанные</MyButton>
-                 <MyButton key="2b" onClick={ButtonAllClick} >Все</MyButton>
-                 <MyButton key="3b"  onClick={ButtonNotOfMadeClick}>Не сделанные</MyButton>
+                 <ButtonsMenu key="1b" onClick={ButtonOfMadeClick} >Сделанные</ButtonsMenu>
+                 <ButtonsMenu key="2b" onClick={ButtonAllClick} >Все</ButtonsMenu>
+                 <ButtonsMenu key="3b" onClick={ButtonNotOfMadeClick}>Не сделанные</ButtonsMenu>
              </div>
             <div className="containerItem">
                 {list}

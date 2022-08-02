@@ -6,10 +6,23 @@
    border: 3rem solid;
    border-width: 1px;
    border-radius: 20px;
-   margin: 20px;
+   /*margin: 20px;*/
+   margin-left: 20px;
+
+   margin-bottom: 20px;
    transition: background-color .15s ease-in-out;
    transition-property: all;
    transition-duration: 0.5s;
+}
+
+span{
+   background: red;
+   font-size: 30px;
+   padding: 20px;
+}
+
+.divTodo input{
+   /*background: #032cfc;*/
 }
 
 .divTodo:hover{
@@ -24,5 +37,7 @@
 }
 
 .textTodo{
+   /*margin-left: 20px;*/
+
    word-break:break-all;
 }

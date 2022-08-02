@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styles from '../styles/styleForTodo.module.css';
-import MyButton from "./button/MyButton";
+import ButtonDelete from "./button/ButtonDelete";
 
 const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
     const [checked,setChecked]=useState(completed);
@@ -18,9 +18,9 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
         <div className={styles.divTodo}>
             <label key={id} className={styles.textTodo}>
                 <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
-                <span>{name}</span>
-                <MyButton key="btnDelete" onClick={ButtonDeleteClick} >УДАЛИТЬ</MyButton>
+                <span >{name}</span>
             </label>
+            <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >УДАЛИТЬ</ButtonDelete>
         </div>
     );
 };
