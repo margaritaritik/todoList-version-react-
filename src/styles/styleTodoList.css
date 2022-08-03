@@ -13,6 +13,7 @@
     justify-content: center;
     display: flex;
     background: linear-gradient(to right, powderblue, pink);
+    font-family: Brush Script MT, Brush Script Std, cursive;
 }
 /*.headerInput{*/
 /*    display: flex;*/

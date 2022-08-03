@@ -14,8 +14,6 @@ function App(props) {
         {id:3, title:'second todo2',completed:false}
     ]);
     const [todosTest,setTodosTest]=useState(todos);
-
-   // console.log(props);
     const [todoTitle,setTodoTitle]=useState('');
     const addTodo = event =>{
         if(event.key==='Enter'){
