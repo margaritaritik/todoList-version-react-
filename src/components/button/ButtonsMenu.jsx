@@ -1,8 +1,9 @@
 import React from 'react';
+import style from './buttonsMenu.module.css'
 
 const ButtonsMenu = ({children,...props}) => {
     return (
-       <button {...props}>{children} </button>
+       <button className={style.btn} {...props}>{children} </button>
     );
 };
 
