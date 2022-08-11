@@ -1,10 +1,9 @@
 .btn{
-    background-color: #032cfc;
-
+    background-color: #6776c0;
     width: 100%;
     max-width: 2000px;
     font-size: 24px;
-    /*opacity: 20%;*/
-
-
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow:  2px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
