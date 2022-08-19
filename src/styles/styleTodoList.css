@@ -9,16 +9,14 @@
 
 
 #root{
-    /*display: flex;*/
     justify-content: center;
     display: flex;
     background: linear-gradient(to right, powderblue, pink);
     font-family: Snell Roundhand, cursive;
 }
-/*.headerInput{*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
+.headerInput{
+ margin: auto;
+}
 
 .containerItem{
     padding: 20px;
@@ -50,7 +48,7 @@ h1{
 
 .listForAll{
     padding: 20px 0 0 0;
-    margin-left: 25px;
+    margin: auto;
 }
 
 .containerItem{

@@ -1,21 +1,16 @@
 
 .divTodo{
    width: 100%;
-   max-width: 300px;
+   max-width: 500px;
    padding: 20px;
    background: red;
    border: 3rem solid;
    border-width: 1px;
    border-radius: 20px;
-   /*margin: 20px;*/
-   margin-left: 20px;
-display: flex;
-   margin-bottom: 20px;
-   /*transition: background-color .15s ease-in-out;*/
+   margin: auto;
+   display: flex;
    transition-property: all;
    transition-duration: 0.5s;
-   /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
-
    transition: 1s linear;
 }
 
@@ -30,14 +25,6 @@ span{
 
 .divTodo:hover{
    transform: scale(1);
-   /*object-position: center;*/
-   /*!*position: fixed;*!*/
-   /*!*transform: scale(0);*!*/
-   /*margin: 10px;*/
-   /*background: #032cfc;*/
-   /*border-color: green;*/
-   /*transition-property: all;*/
-   /*transition-duration: 0.5s;*/
 }
 
 .textTodo{
