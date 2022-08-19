@@ -24,11 +24,24 @@ span{
 }
 
 .divTodo:hover{
-   transform: scale(1);
+   /*transform: scale(1);*/
 }
 
 .textTodo{
    /*margin-left: 20px;*/
 
    word-break:break-all;
+}
+
+.date_time{
+
+}
+
+
+/*targeting*/
+.containerTodo{
+   display: flex;
+}
+.targeting{
+
 }
