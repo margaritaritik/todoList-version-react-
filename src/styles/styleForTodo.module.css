@@ -1,7 +1,8 @@
 
 .divTodo{
-   width: 100%;
-   max-width: 500px;
+   position: relative;
+   /*width: 100%;*/
+   width: 325px;
    padding: 20px;
    background: red;
    border: 3rem solid;
@@ -9,9 +10,6 @@
    border-radius: 20px;
    margin: auto;
    display: flex;
-   transition-property: all;
-   transition-duration: 0.5s;
-   transition: 1s linear;
 }
 
 span{
@@ -29,7 +27,8 @@ span{
 
 .textTodo{
    /*margin-left: 20px;*/
-
+   width: 100%;
+   max-width: 300px;
    word-break:break-all;
 }
 
@@ -41,7 +40,16 @@ span{
 /*targeting*/
 .containerTodo{
    display: flex;
+   /*display: inline-flex;*/
 }
 .targeting{
+   background-color: rebeccapurple;
+   position: absolute;
+right: -100px;
+   /*left:320px;*/
+   top:0px;
 
+   display: flex;
+   width: 100%;
+   max-width: 100px;
 }

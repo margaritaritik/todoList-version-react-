@@ -5,13 +5,37 @@ import ButtonDelete from "./button/ButtonDelete";
 const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
     const [checked,setChecked]=useState(completed);
     const [isHovering,setIsHovering]=useState(false);
+    const [hoveringDeleting,getHoveringDeleting]=useState({typeHovering:false, typeHoveringBlock:false});
     const handleMouseOver = () => {
-        setIsHovering(true);
+        // if(hoveringDeleting.typeHovering==false && hoveringDeleting.typeHoveringBlock==false)
+        // {
+            hoveringDeleting.typeHovering=true;
+            // hoveringDeleting.typeHoveringBlock=false;
+        // }
+
+
+
+    };
+    const handleMouseOverBlock = () => {
+        if(hoveringDeleting.typeHovering==true && hoveringDeleting.typeHoveringBlock==false)
+        {
+            hoveringDeleting.typeHoveringBlock=true;
+            // hoveringDeleting.typeHoveringBlock=false;
+        }
     };
 
     const handleMouseOut = () => {
-        setIsHovering(false);
+        // setIsHovering(false);
+        if(hoveringDeleting.typeHovering==true && hoveringDeleting.typeHoveringBlock==true)
+        {
+            hoveringDeleting.typeHoveringBlock=false;
+            hoveringDeleting.typeHovering=false;
+            setIsHovering(false);
+        }
+
     };
+
+
 
     const ChangeCompleted = ()=>{
         setChecked(!checked);
@@ -29,14 +53,14 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
                     <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
                     <span >{name}</span>
                 </label>
-
+                {hoveringDeleting.typeHovering===true&&(
+                    <div className={styles.targeting} onMouseOver={handleMouseOverBlock} onMouseOut={handleMouseOut}>
+                        <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >X</ButtonDelete>
+                        <div className={styles.date_time}>дата и время</div>
+                    </div>
+                )}
             </div>
-            {isHovering&&(
-                <div className={styles.targeting} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                    <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >X</ButtonDelete>
-                    <div className={styles.date_time}>дата и время</div>
-                </div>
-            )}
+
         </div>
 
     );

@@ -9,9 +9,9 @@ import ButtonsMenu from "./components/button/ButtonsMenu";
 
 function App(props) {
     const [todos,setTodos]=useState([
-        {id:1, title:'first todo',completed:false},
-        {id:2, title:'second todo',completed:false},
-        {id:3, title:'second todo2',completed:false}
+        {id:1, title:'first',completed:false},
+        {id:2, title:'second',completed:false},
+        {id:3, title:'second ',completed:false}
     ]);
     const [todosTest,setTodosTest]=useState(todos);
     const [todoTitle,setTodoTitle]=useState('');
