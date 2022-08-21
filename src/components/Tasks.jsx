@@ -5,37 +5,31 @@ import ButtonDelete from "./button/ButtonDelete";
 const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
     const [checked,setChecked]=useState(completed);
     const [isHovering,setIsHovering]=useState(false);
-    const [hoveringDeleting,getHoveringDeleting]=useState({typeHovering:false, typeHoveringBlock:false});
+    const [hoveringDeleting,setHoveringDeleting]=useState(false);
     const handleMouseOver = () => {
-        // if(hoveringDeleting.typeHovering==false && hoveringDeleting.typeHoveringBlock==false)
-        // {
-            hoveringDeleting.typeHovering=true;
-            // hoveringDeleting.typeHoveringBlock=false;
-        // }
-
-
-
+        setIsHovering(true);
     };
     const handleMouseOverBlock = () => {
-        if(hoveringDeleting.typeHovering==true && hoveringDeleting.typeHoveringBlock==false)
-        {
-            hoveringDeleting.typeHoveringBlock=true;
-            // hoveringDeleting.typeHoveringBlock=false;
-        }
+        setHoveringDeleting(true);
     };
+    const handleMouseOutBlock = () => {
+        setHoveringDeleting(false);
+
+    };
+
 
     const handleMouseOut = () => {
-        // setIsHovering(false);
-        if(hoveringDeleting.typeHovering==true && hoveringDeleting.typeHoveringBlock==true)
-        {
-            hoveringDeleting.typeHoveringBlock=false;
-            hoveringDeleting.typeHovering=false;
+        if(hoveringDeleting===false){
+            console.log( isHovering);
+            console.log(hoveringDeleting);
+            setIsHovering(true);
+        }
+        else {
+            console.log(isHovering);
+            console.log(hoveringDeleting);
             setIsHovering(false);
         }
-
     };
-
-
 
     const ChangeCompleted = ()=>{
         setChecked(!checked);
@@ -53,8 +47,8 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
                     <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
                     <span >{name}</span>
                 </label>
-                {hoveringDeleting.typeHovering===true&&(
-                    <div className={styles.targeting} onMouseOver={handleMouseOverBlock} onMouseOut={handleMouseOut}>
+                {isHovering&&(
+                    <div className={styles.targeting} onMouseOver={handleMouseOverBlock} onMouseOut={handleMouseOutBlock }>
                         <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >X</ButtonDelete>
                         <div className={styles.date_time}>дата и время</div>
                     </div>
