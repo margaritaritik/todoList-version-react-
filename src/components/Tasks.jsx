@@ -20,12 +20,12 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
 
     const handleMouseOut = () => {
         if(hoveringDeleting===false){
-            console.log( isHovering);
+            console.log(`if: ${isHovering}`);
             console.log(hoveringDeleting);
             setIsHovering(true);
         }
         else {
-            console.log(isHovering);
+            console.log(`else: ${isHovering}`);
             console.log(hoveringDeleting);
             setIsHovering(false);
         }
