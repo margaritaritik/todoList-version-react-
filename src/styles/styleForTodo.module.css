@@ -35,21 +35,24 @@ span{
 .date_time{
 
 }
-
+.divTodo:hover .targeting{
+   /*background-color: black;*/
+   opacity: 100%;
+}
 
 /*targeting*/
 .containerTodo{
    display: flex;
    /*display: inline-flex;*/
 }
+
 .targeting{
+   opacity: 0;
    background-color: rebeccapurple;
    position: absolute;
-right: -100px;
-   /*left:320px;*/
-   top:0px;
+   right: -70px;
+   top:-10px;
 
    display: flex;
-   width: 100%;
-   max-width: 100px;
+
 }
