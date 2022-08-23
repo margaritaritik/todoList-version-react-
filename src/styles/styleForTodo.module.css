@@ -35,14 +35,7 @@ span{
 .date_time{
 
 }
-.divTodo:hover .targeting{
-   /*background-color: black;*/
-   opacity: 100%;
-   animation-name: menu_todo_block;
-   animation-duration: 2s;
-   /*animation-play-state: paused;*/
-   animation-fill-mode: forwards;
-}
+
 
 /*targeting*/
 .containerTodo{
@@ -58,6 +51,15 @@ span{
    top:-10px;
    display: flex;
 
+}
+
+.divTodo:hover .targeting{
+   /*background-color: black;*/
+   opacity: 100%;
+   animation-name: menu_todo_block;
+   animation-duration: 1.5s;
+   /*animation-play-state: paused;*/
+   animation-fill-mode: forwards;
 }
  @keyframes menu_todo_block {
     0%{
