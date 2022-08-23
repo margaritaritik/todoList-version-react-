@@ -8,7 +8,7 @@ const MenuTodo = ({id,deleteTodo}) => {
     }
     return (
             <div className={styles.targeting}>
-                <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  >X</ButtonDelete>
+                <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}  ></ButtonDelete>
                 <div className={styles.date_time}>дата</div>
             </div>
     );
