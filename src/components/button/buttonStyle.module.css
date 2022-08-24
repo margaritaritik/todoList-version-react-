@@ -9,7 +9,11 @@
 
 
 .btn:hover{
-    /*transition-property: all;*/
-    /*transition-duration: 0.5s;*/
+
     background-color: red;
+}
+
+.btn_delete{
+    width: 40px;
+    height: 40px;
 }
