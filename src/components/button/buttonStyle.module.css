@@ -1,9 +1,11 @@
 .btn{
-    background: orange;
-    text-align: center;
+
+    /*text-align: center;*/
     cursor:pointer;
     width: 40px;
-    height: 40px;
+    border-width: 0;
+    /*height: 40px;*/
+    /*padding-left: 20px;*/
 
 }
 
@@ -12,8 +14,10 @@
 
     background-color: red;
 }
+.btn img{
+    width: 120px;
 
+}
 .btn_delete{
-    width: 40px;
-    height: 40px;
+
 }

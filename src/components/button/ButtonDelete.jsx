@@ -5,7 +5,7 @@ import style from './buttonStyle.module.css'
 const ButtonDelete = ({children,...props}) => {
     return (
         <button className={style.btn}  {...props}  >
-            <img src= '/fishbowl-withfish.svg' alt="X" className="btn_delete"/>
+            <img src= '/images/Wastebasket.svg' alt="X" className="btn_delete"/>
         </button>
     );
 };

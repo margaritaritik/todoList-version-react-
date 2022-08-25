@@ -45,7 +45,7 @@ span{
 
 .targeting{
    opacity: 0;
-   background-color: rebeccapurple;
+   background: rebeccapurple;
    position: absolute;
    right: -50px;
    top:-10px;
