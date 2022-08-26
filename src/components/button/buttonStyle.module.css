@@ -16,6 +16,9 @@
 }
 .btn img{
     width: 120px;
+    /*fill: #6776c0;*/
+    stroke: red;
+    fill: red;
 
 }
 .btn_delete{

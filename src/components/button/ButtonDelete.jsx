@@ -1,11 +1,12 @@
 import React from 'react';
 import style from './buttonStyle.module.css'
-// import img_btn_delete from '../../../public/fishbowl-withfish.svg'
+import {ReactComponent as img_btn_delete} from '../../images/Wastebasket.svg'
 
 const ButtonDelete = ({children,...props}) => {
     return (
         <button className={style.btn}  {...props}  >
-            <img src= '/images/Wastebasket.svg' alt="X" className="btn_delete"/>
+            <img_btn_delete className="btn_delete" width='200px' height="200px" />
+            {/*<svg xmlns='/images/Wastebasket.svg' ></svg>*/}
         </button>
     );
 };
