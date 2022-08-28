@@ -14,13 +14,28 @@
 
     background-color: red;
 }
-.btn img{
-    width: 120px;
-    /*fill: #6776c0;*/
-    stroke: red;
-    fill: red;
+
+.btn img_btn_delete{
+    padding-left: 200px;
 
 }
-.btn_delete{
-
+.btn_delete * {
+    fill: #6776c0;
+    fill-opacity: 40%;
+    width: 200px;
+    height: 200px;
 }
+.btn_delete *:hover{
+    fill-opacity: 100%;
+}
+/*.btn img{*/
+/*    width: 120px;*/
+/*    !*fill: #6776c0;*!*/
+/*    stroke: red;*/
+/*    fill: red;*/
+
+/*}*/
+/*.btn_delete{*/
+/*        stroke: red;*/
+/*        fill: red;*/
+/*}*/

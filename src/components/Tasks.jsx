@@ -3,6 +3,8 @@ import styles from '../styles/styleForTodo.module.css';
 import ButtonDelete from "./button/ButtonDelete";
 import Menu_todo from "./Menu_todo";
 
+
+
 const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
     const [checked,setChecked]=useState(completed);
     const [isHovering,setIsHovering]=useState(false);

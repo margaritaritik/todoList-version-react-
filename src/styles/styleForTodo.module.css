@@ -4,7 +4,7 @@
    /*width: 100%;*/
    width: 325px;
    padding: 20px;
-   background: red;
+   background: rgba(188, 143, 143, 0.13);
    border: 3rem solid;
    border-width: 1px;
    border-radius: 20px;
@@ -63,15 +63,15 @@ span{
 }
  @keyframes menu_todo_block {
     0%{
-       opacity: 0;
+       opacity: 100%;
        transform: translate(0px, 0px);
        background-color: green;
     }
     20%{
-       opacity: 5%;
+       opacity: 100%;
     }
     50%{
-       opacity: 15%;
+       opacity: 100%;
     }
     100%{
        opacity: 100%;

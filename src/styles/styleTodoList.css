@@ -12,8 +12,10 @@
     /*justify-content: center;*/
 
     display: flex;
-    background: linear-gradient(to right, powderblue, pink);
+    background: linear-gradient(to bottom, #F7Ec3F,white);
     font-family: Snell Roundhand, cursive;
+    box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+
 }
 .App{
     margin: 0 auto;
@@ -43,11 +45,6 @@ h1{
 
 
 
-.textforwrite{
-    width: 300px;
-}
-
-
 .listForAll{
     padding: 20px 0 0 0;
     margin: auto;
@@ -56,3 +53,8 @@ h1{
     justify-content: center;
 }
 
+.btnSave{
+    padding: 5px;
+    border-width: 0;
+    box-shadow:10px 0 15px 4px rgba(0,0,0,30%);
+}
