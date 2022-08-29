@@ -25,7 +25,7 @@
     width: 200px;
     height: 200px;
 }
-.btn_delete *:hover{
+.btn_delete:hover{
     fill-opacity: 100%;
 }
 /*.btn img{*/

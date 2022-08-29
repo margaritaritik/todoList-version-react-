@@ -89,8 +89,6 @@ function App(props) {
              </div>
             <div className="containerItem">
                 {list}
-
-
             </div>
     </div>
   );
