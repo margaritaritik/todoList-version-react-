@@ -25,17 +25,8 @@
     width: 200px;
     height: 200px;
 }
-.btn_delete:hover{
+.btn:hover .btn_delete *{
+    transition: all 2s ease;
     fill-opacity: 100%;
 }
-/*.btn img{*/
-/*    width: 120px;*/
-/*    !*fill: #6776c0;*!*/
-/*    stroke: red;*/
-/*    fill: red;*/
 
-/*}*/
-/*.btn_delete{*/
-/*        stroke: red;*/
-/*        fill: red;*/
-/*}*/
