@@ -7,6 +7,8 @@ import {Spring, animated, useSpring} from 'react-spring'
 
 
 import ButtonsMenu from "./components/button/ButtonsMenu";
+import Cloud_animation from "./components/animation elements/Cloud_animation";
+
 
 
 function App(props) {
@@ -72,21 +74,25 @@ function App(props) {
     }
   return (
     <div className="App">
-             <header className="headerInput">
-                 <h1>Список дел</h1>
-                 <input
-                     className={styleInput.textForWrite}
-                     type="text" value={todoTitle}
-                     onChange={event => setTodoTitle(event.target.value)}
-                     onKeyPress={addTodo}
-                 />
-                 <button key="btn1" className='btnSave' onClick={addTodo}>сохранить</button>
-             </header>
-             <div className="listForAll">
-                 <ButtonsMenu key="1b" onClick={ButtonOfMadeClick} >Сделанные</ButtonsMenu>
-                 <ButtonsMenu key="2b" onClick={ButtonAllClick} >Все</ButtonsMenu>
-                 <ButtonsMenu key="3b" onClick={ButtonNotOfMadeClick}>Не сделанные</ButtonsMenu>
-             </div>
+        <div className="container">
+            <Cloud_animation/>
+            <header className="headerInput">
+                <h1>Список дел</h1>
+                <input
+                    className={styleInput.textForWrite}
+                    type="text" value={todoTitle}
+                    onChange={event => setTodoTitle(event.target.value)}
+                    onKeyPress={addTodo}
+                />
+                <button key="btn1" className='btnSave' onClick={addTodo}>сохранить</button>
+            </header>
+
+            <div className="listForAll">
+                <ButtonsMenu key="1b" onClick={ButtonOfMadeClick} >Сделанные</ButtonsMenu>
+                <ButtonsMenu key="2b" onClick={ButtonAllClick} >Все</ButtonsMenu>
+                <ButtonsMenu key="3b" onClick={ButtonNotOfMadeClick}>Не сделанные</ButtonsMenu>
+            </div>
+        </div>
             <div className="containerItem">
                 {list}
             </div>

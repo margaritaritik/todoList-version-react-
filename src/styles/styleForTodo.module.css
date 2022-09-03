@@ -54,12 +54,12 @@ span{
 }
 
 .divTodo:hover .targeting{
-   /*background-color: black;*/
    opacity: 100%;
    animation-name: menu_todo_block;
    animation-duration: 1.5s;
    animation-fill-mode: forwards;
 }
+
  @keyframes menu_todo_block {
     0%{
        opacity: 0%;

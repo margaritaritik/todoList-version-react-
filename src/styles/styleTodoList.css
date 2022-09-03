@@ -9,10 +9,8 @@
 
 
 #root{
-    /*justify-content: center;*/
-
     display: flex;
-    background: linear-gradient(to bottom, #F7Ec3F,white);
+    background: linear-gradient(to bottom, #0014ff,white);
     font-family: Snell Roundhand, cursive;
     box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
 
@@ -20,8 +18,16 @@
 .App{
     margin: 0 auto;
 }
+.container{
+    /*position: relative;*/
+
+}
+
 .headerInput{
- /*margin: auto;*/
+ position: relative;
+    z-index: 2;
+ /*   top: 0;*/
+ /*   left: 0;*/
 }
 
 .containerItem{
@@ -46,6 +52,8 @@ h1{
 
 
 .listForAll{
+    position: relative;
+    z-index: 2;
     padding: 20px 0 0 0;
     margin: auto;
     width: 300px;
