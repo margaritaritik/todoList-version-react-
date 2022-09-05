@@ -9,7 +9,7 @@ const MenuTodo = ({id,deleteTodo}) => {
     return (
             <div className={styles.targeting}>
                 <ButtonDelete key="btnDelete" onClick={ButtonDeleteClick}></ButtonDelete>
-                <div className={styles.date_time}>дата</div>
+                <div className={styles.date_time}>--</div>
             </div>
     );
 };

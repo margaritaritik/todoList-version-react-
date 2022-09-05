@@ -4,12 +4,14 @@
    /*width: 100%;*/
    width: 325px;
    padding: 20px;
-   background: rgba(188, 143, 143, 0.13);
+   background: rgba(170, 196, 250, 0.27);
 
    border-radius: 20px;
    margin: auto;
    display: flex;
    box-shadow: 0px 0px 5px black ;
+   z-index: 2;
+   transition: all 10s ease 0s;
 }
 
 span{
@@ -18,15 +20,15 @@ span{
 }
 
 .divTodo input{
-   /*background: #032cfc;*/
+
 }
 
 .divTodo:hover{
-   /*transform: scale(1);*/
+
+
 }
 
 .textTodo{
-   /*margin-left: 20px;*/
    width: 100%;
    max-width: 300px;
    word-break:break-all;
@@ -36,24 +38,24 @@ span{
 
 }
 
-
-/*targeting*/
 .containerTodo{
    display: flex;
-   /*display: inline-flex;*/
 }
 
 .targeting{
    opacity: 0;
-   background: rebeccapurple;
    position: absolute;
    right: -50px;
    top:-10px;
    display: flex;
+   transition: all 1s ease 0s;
+   padding:0px 0px 0px 20px ;
+   z-index: 1;
 
 }
 
 .divTodo:hover .targeting{
+   transition: all 1s ease 0s;
    opacity: 100%;
    animation-name: menu_todo_block;
    animation-duration: 1.5s;
@@ -64,7 +66,7 @@ span{
     0%{
        opacity: 0%;
        transform: translate(0px, 0px);
-       background-color: green;
+       background: linear-gradient(to right,rgb(255,255,255,0) 20%, rgba(68, 94, 229, 0.78));
     }
     20%{
        opacity: 5%;
@@ -75,6 +77,7 @@ span{
     100%{
        opacity: 100%;
        transform: translate(20px, 0px);
-       background-color: greenyellow;
+       /*background-color: rgba(9, 83, 229, 0.24);*/
+       background: linear-gradient(to right,rgb(255,255,255,0) 20%, rgba(68, 94, 229, 0.78));
     }
  }

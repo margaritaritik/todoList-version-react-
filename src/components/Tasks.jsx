@@ -6,7 +6,7 @@ import Menu_todo from "./Menu_todo";
 
 
 const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
-    const [checked,setChecked]=useState(completed);
+    const [checked_,setChecked]=useState(completed);
     const [isHovering,setIsHovering]=useState(false);
     const handleMouseOver = () => {
         setIsHovering(true);
@@ -18,8 +18,8 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
     };
 
     const ChangeCompleted = ()=>{
-        setChecked(!checked);
-        completed=!checked;
+        setChecked(!checked_);
+        completed=!checked_;
         checkedCompleted(id,name,completed);
     }
 
@@ -28,7 +28,7 @@ const Tasks = function ({name,id,completed,checkedCompleted,deleteTodo}) {
         <div  className={styles.containerTodo}>
             <div className={styles.divTodo} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                 <label key={id} className={styles.textTodo}>
-                    <input key={'inputting'} type={"checkbox"} checked={checked} onChange={ChangeCompleted} />
+                    <input key={'inputting'} type={"checkbox"} checked={checked_} onChange={ChangeCompleted} />
                     <span >{name}</span>
                 </label>
                 <Menu_todo id={id} deleteTodo={deleteTodo}/>

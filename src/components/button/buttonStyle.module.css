@@ -7,6 +7,7 @@
     /*height: 40px;*/
     /*padding-left: 20px;*/
     background: none;
+    transition: all 2s ease;
 
 }
 
@@ -15,6 +16,7 @@
 
 }
 .btn_delete * {
+    transition: all 2s ease;
     fill: #6776c0;
     fill-opacity: 40%;
     width: 200px;
