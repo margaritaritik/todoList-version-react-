@@ -11,16 +11,24 @@ import Cloud_animation from "./components/animation elements/Cloud_animation";
 
 
 function App(props) {
+
+    const FILTER_VARIANTS = {
+        ALL: "ALL",
+        MADE: "MADE",
+        NOT_MADE: "NOT_MADE"
+    }
     const [todos, setTodos] = useState([
         {id: 1, title: 'first', completed: false},
         {id: 2, title: 'second', completed: false},
         {id: 3, title: 'second ', completed: false}
     ]);
-    const [filter_, setFilter] = useState(0);
-    const [todosTest, setTodosTest] = useState(todos);
+    const [filter_mode, setFilterMode] = useState(FILTER_VARIANTS.ALL);
+
+    const [filteredList, setFilteredList] = useState(todos);
     const [todoTitle, setTodoTitle] = useState('');
-   function addTodo(event){
-       event.preventDefault();
+
+    function addTodo(event) {
+        event.preventDefault();
         setTodos([
             ...todos,
             {
@@ -29,8 +37,8 @@ function App(props) {
                 completed: false
             }
         ])
-        setTodosTest([
-            ...todosTest,
+        setFilteredList([
+            ...filteredList,
             {
                 id: Date.now(),
                 title: todoTitle,
@@ -45,34 +53,38 @@ function App(props) {
     const check = (id, title, completed) => {
         const todo = {id: id, title: title, completed: completed};
         const myArray = todos.find(x => x.id === id).id;
+        console.log(completed);
         setTodos(todos.map(obj => {
-            if (obj.id == id) {
-                return {...obj, ['completed']: !(obj.completed)};
+            if (obj.id === id) {
+                return {...obj, completed: !(obj.completed)};
             } else {
                 return obj;
             }
         }));
     }
     const deleteTodo = (id) => {
-        setTodosTest(todosTest.filter(note => note.id !== id));
+        setFilteredList(filteredList.filter(note => note.id !== id));
         setTodos(todos.filter(note => note.id !== id));
     }
+    const getFiltered = () => {
+        if (filter_mode === FILTER_VARIANTS.MADE) {
+            return todos.filter(completed => completed.completed);
+        } else if (filter_mode === FILTER_VARIANTS.NOT_MADE) {
 
-
-    let list = todosTest.map(todo => (
-        <Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check} deleteTodo={deleteTodo}/>));
-
-    const ButtonOfMadeClick = event => {
-        setTodosTest([...todos].filter(completed => completed.completed === true));
+            return todos.filter(completed => !completed.completed);
+        } else {
+            return todos;
+        }
     }
 
-    const ButtonNotOfMadeClick = event => {
-        setTodosTest([...todos].filter(completed => completed.completed === false));
+    const setFilterValue = (value) => {
+        console.log(`${filter_mode} - ${value}`);
+        setFilterMode(value);
+        console.log(`${filter_mode} - ${value}`);
+        // ButtonsFilterClick();
     }
 
-    const ButtonAllClick = event => {
-        setTodosTest([...todos]);
-    }
+
     return (
         <div className="App">
             <div className="container">
@@ -84,20 +96,27 @@ function App(props) {
                             className={styleInput.textForWrite}
                             type="text" value={todoTitle}
                             onChange={event => setTodoTitle(event.target.value)}
-                            // onKeyPress={addTodo}
                         />
                         <button type="submit" key="btn1" className='btnSave'>сохранить</button>
                     </form>
                 </header>
 
                 <div className="listForAll">
-                    <ButtonsMenu key="1b" onClick={ButtonOfMadeClick}>Сделанные</ButtonsMenu>
-                    <ButtonsMenu key="2b" onClick={ButtonAllClick}>Все</ButtonsMenu>
-                    <ButtonsMenu key="3b" onClick={ButtonNotOfMadeClick}>Не сделанные</ButtonsMenu>
+                    <ButtonsMenu key="1b" onClick={() => {
+                        setFilterValue(FILTER_VARIANTS.MADE)
+                    }}>Сделанные</ButtonsMenu>
+                    <ButtonsMenu key="2b" onClick={() => {
+                        setFilterValue(FILTER_VARIANTS.ALL)
+                    }}>Все</ButtonsMenu>
+                    <ButtonsMenu key="3b" onClick={() => {
+                        setFilterValue(FILTER_VARIANTS.NOT_MADE)
+                    }}>Не сделанные</ButtonsMenu>
                 </div>
             </div>
             <div className="containerItem">
-                {list}
+                {getFiltered().map(todo => (
+                    <Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}
+                           deleteTodo={deleteTodo}/>))}
             </div>
         </div>
     );
