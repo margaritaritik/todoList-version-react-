@@ -8,6 +8,7 @@ import {Spring, animated, useSpring} from 'react-spring'
 
 import ButtonsMenu from "./components/button/ButtonsMenu";
 import Cloud_animation from "./components/animation elements/Cloud_animation";
+import Search from "./components/Search";
 
 
 function App(props) {
@@ -26,6 +27,7 @@ function App(props) {
 
     const [filteredList, setFilteredList] = useState(todos);
     const [todoTitle, setTodoTitle] = useState('');
+    const [searchTitle, setSearchTitle] = useState('');
 
     function addTodo(event) {
         event.preventDefault();
@@ -51,10 +53,7 @@ function App(props) {
 
 
     const check = (id, title, completed) => {
-        const todo = {id: id, title: title, completed: completed};
-        const myArray = todos.find(x => x.id === id).id;
-        console.log(completed);
-        setTodos(todos.map(obj => {
+        setFilteredList(filteredList.map(obj => {
             if (obj.id === id) {
                 return {...obj, completed: !(obj.completed)};
             } else {
@@ -62,27 +61,35 @@ function App(props) {
             }
         }));
     }
+
     const deleteTodo = (id) => {
         setFilteredList(filteredList.filter(note => note.id !== id));
         setTodos(todos.filter(note => note.id !== id));
     }
-    const getFiltered = () => {
-        if (filter_mode === FILTER_VARIANTS.MADE) {
-            return todos.filter(completed => completed.completed);
-        } else if (filter_mode === FILTER_VARIANTS.NOT_MADE) {
 
-            return todos.filter(completed => !completed.completed);
+    const getFiltered = () => {
+        let filteredList = [...todos];
+        if(searchTitle.length>0)
+        {
+            filteredList = filteredList.filter(obj => (obj.title).includes(searchTitle));
+        }
+
+
+        if (filter_mode === FILTER_VARIANTS.MADE) {
+            return filteredList.filter(completed => completed.completed);
+        } else if (filter_mode === FILTER_VARIANTS.NOT_MADE) {
+            return filteredList.filter(completed => !completed.completed);
         } else {
-            return todos;
+            return filteredList;
         }
     }
 
     const setFilterValue = (value) => {
-        console.log(`${filter_mode} - ${value}`);
         setFilterMode(value);
-        console.log(`${filter_mode} - ${value}`);
-        // ButtonsFilterClick();
     }
+     const searchTodo = (todo) => {
+         setSearchTitle(todo);
+     }
 
 
     return (
@@ -112,10 +119,11 @@ function App(props) {
                         setFilterValue(FILTER_VARIANTS.NOT_MADE)
                     }}>Не сделанные</ButtonsMenu>
                 </div>
+                <Search searchTodo={searchTodo}/>
             </div>
             <div className="containerItem">
                 {getFiltered().map(todo => (
-                    <Tasks name={todo.title} id={todo.id} completed={false} checkedCompleted={check}
+                    <Tasks key={todo.id} name={todo.title} id={todo.id} completed={todo.completed} checkedCompleted={check}
                            deleteTodo={deleteTodo}/>))}
             </div>
         </div>

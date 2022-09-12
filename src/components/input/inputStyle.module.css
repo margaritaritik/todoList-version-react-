@@ -5,11 +5,15 @@
     padding:5px;
     border:0;
     box-shadow:0 0 15px 4px rgba(0,0,0,30%);
-
-
 }
 
-.textForWrite:hover{
+.textForWriteSearch{
+    width: 360px;
+    padding:5px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,30%);
+}
 
-
+.containerInputSearch{
+    width:100%;
 }

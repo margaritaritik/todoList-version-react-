@@ -5,7 +5,7 @@ import {ReactComponent as ImgD} from '../../images/icon-trash.svg';
 const ButtonDelete = ({children,...props}) => {
     return (
         <button className={style.btn}  {...props}  >
-            <ImgD class={style.btn_delete}/>
+            <ImgD className={style.btn_delete}/>
         </button>
     );
 };
