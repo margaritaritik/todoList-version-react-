@@ -68,19 +68,17 @@ function App(props) {
     }
 
     const getFiltered = () => {
-        let filteredList = [...todos];
+        let filteredList1 = [...filteredList];
         if(searchTitle.length>0)
         {
-            filteredList = filteredList.filter(obj => (obj.title).includes(searchTitle));
+            filteredList1= filteredList1.filter(obj => (obj.title).includes(searchTitle));
         }
-
-
         if (filter_mode === FILTER_VARIANTS.MADE) {
-            return filteredList.filter(completed => completed.completed);
+            return filteredList1.filter(completed => completed.completed);
         } else if (filter_mode === FILTER_VARIANTS.NOT_MADE) {
-            return filteredList.filter(completed => !completed.completed);
+            return filteredList1.filter(completed => !completed.completed);
         } else {
-            return filteredList;
+            return filteredList1;
         }
     }
 
