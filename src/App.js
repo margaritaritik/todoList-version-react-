@@ -72,6 +72,10 @@ function App(props) {
         if(searchTitle.length>0)
         {
             filteredList1= filteredList1.filter(obj => (obj.title).includes(searchTitle));
+            console.log(searchTitle);
+        }
+        else if(searchTitle.length===0){
+            filteredList1= [...filteredList];
         }
         if (filter_mode === FILTER_VARIANTS.MADE) {
             return filteredList1.filter(completed => completed.completed);
